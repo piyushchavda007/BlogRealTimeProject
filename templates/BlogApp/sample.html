@@ -1,0 +1,192 @@
+{#<!DOCTYPE html>#}
+{#{% extends 'BlogApp/base.html' %}#}
+{#{% block title %} Piyush_Chavda Blog {% endblock %}#}
+{#{% block content %}#}
+{##}
+{#    <div class="carousel-item hello_i">#}
+{#      <div class="row_in">#}
+{#        <div class="container">#}
+{#          <!-- carousel code -->#}
+{#          <div id="carouselExampleIndicators" class="carousel slide">#}
+{#            <ol class="carousel-indicators">#}
+{#              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>#}
+{#              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>#}
+{#              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>#}
+{#            </ol>#}
+{#            <div class="carousel-inner">#}
+{##}
+{#              <!-- first slide -->#}
+{#              <div class="carousel-item active skyblue">#}
+{#                <div class="carousel-caption d-md-block">#}
+{#                  <h3 data-animation="animated bounceInLeft">#}
+{#                    This is the caption for slide 1#}
+{#                  </h3>#}
+{#                  <h3 data-animation="animated bounceInRight">#}
+{#                    This is the caption for slide 1#}
+{#                  </h3>#}
+{#                  <button class="btn btn-primary btn-lg" data-animation="animated zoomInUp">Button</button>#}
+{#                </div>#}
+{#              </div>#}
+{##}
+{#              <!-- second slide -->#}
+{#              <div class="carousel-item deepskyblue">#}
+{#                <div class="carousel-caption d-md-block">#}
+{#                  <h3 class="icon-container" data-animation="animated bounceInDown">#}
+{#                    <span class="fa fa-heart"></span>#}
+{#                  </h3>#}
+{#                  <h3 data-animation="animated bounceInUp">#}
+{#                    This is the caption for slide 2#}
+{#                  </h3>#}
+{#                  <button class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button>#}
+{#                </div>#}
+{#              </div>#}
+{##}
+{#              <!-- third slide -->#}
+{#              <div class="carousel-item darkerskyblue">#}
+{#                <div class="carousel-caption d-md-block">#}
+{#                  <h3 class="icon-container" data-animation="animated zoomInLeft">#}
+{#                    <span class="fa fa-glass"></span>#}
+{#                  </h3>#}
+{#                  <h3 data-animation="animated flipInX">#}
+{#                    This is the caption for slide 3#}
+{#                  </h3>#}
+{#                  <button class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{##}
+{#            <!-- controls -->#}
+{#            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">#}
+{#        <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
+{#        <span class="sr-only">Previous</span>#}
+{#      </a>#}
+{#            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">#}
+{#        <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
+{#        <span class="sr-only">Next</span>#}
+{#      </a>#}
+{#          </div>#}
+{##}
+{#        </div>#}
+{#      </div>#}
+{#</div>#}
+{##}
+{#    <script>#}
+{##}
+{#(function($) {#}
+{#  //Function to animate slider captions#}
+{#  function doAnimations(elems) {#}
+{#    //Cache the animationend event in a variable#}
+{#    var animEndEv = "webkitAnimationEnd animationend";#}
+{##}
+{#    elems.each(function() {#}
+{#      var $this = $(this),#}
+{#        $animationType = $this.data("animation");#}
+{#      $this.addClass($animationType).one(animEndEv, function() {#}
+{#        $this.removeClass($animationType);#}
+{#      });#}
+{#    });#}
+{#  }#}
+{##}
+{#  //Variables on page load#}
+{#  var $myCarousel = $("#carouselExampleIndicators"),#}
+{#    $firstAnimatingElems = $myCarousel#}
+{#      .find(".carousel-item:first")#}
+{#      .find("[data-animation ^= 'animated']");#}
+{##}
+{#  //Initialize carousel#}
+{#  $myCarousel.carousel();#}
+{##}
+{#  //Animate captions in first slide on page load#}
+{#  doAnimations($firstAnimatingElems);#}
+{##}
+{#  //Other slides to be animated on carousel slide event#}
+{#  $myCarousel.on("slide.bs.carousel", function(e) {#}
+{#    var $animatingElems = $(e.relatedTarget).find(#}
+{#      "[data-animation ^= 'animated']"#}
+{#    );#}
+{#    doAnimations($animatingElems);#}
+{#  });#}
+{#})(jQuery);#}
+{##}
+{#    </script>#}
+{##}
+{#    {% include 'BlogApp/pagination.html' with page=post_list %}#}
+{#    {% comment %}{%include 'BlogApp/pagination.html' with page=page_obj%} {%endcomment %}#}
+{#{% endblock %}#}
+
+
+
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{# <div class="container hello_i">#}
+{#            <div class="row">#}
+{#                <div class="col">#}
+{#      <!-- carousel code -->#}
+{#                  <div id="carouselExampleIndicators" class="carousel slide">#}
+{#                    <ol class="carousel-indicators">#}
+{#                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>#}
+{#                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>#}
+{#                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>#}
+{#                    </ol>#}
+{#                    <div class="carousel-inner">#}
+{##}
+{#                      <!-- first slide -->#}
+{#                      <div class="carousel-item active skyblue">#}
+{#                        <div class="carousel-caption d-md-block">#}
+{#                          <h3 data-animation="animated bounceInLeft">#}
+{#                            This is the caption for slide 1#}
+{#                          </h3>#}
+{#                          <h3 data-animation="animated bounceInRight">#}
+{#                            This is the caption for slide 1#}
+{#                          </h3>#}
+{#                          <button class="btn btn-primary btn-lg" data-animation="animated zoomInUp">Button</button>#}
+{#                        </div>#}
+{#                      </div>#}
+{##}
+{#                      <!-- second slide -->#}
+{#                      <div class="carousel-item deepskyblue">#}
+{#                        <div class="carousel-caption d-md-block">#}
+{#                          <h3 class="icon-container" data-animation="animated bounceInDown">#}
+{#                            <span class="fa fa-heart"></span>#}
+{#                          </h3>#}
+{#                          <h3 data-animation="animated bounceInUp">#}
+{#                            This is the caption for slide 2#}
+{#                          </h3>#}
+{#                          <button class="btn btn-primary btn-lg" data-animation="animated zoomInRight">Button</button>#}
+{#                        </div>#}
+{#                      </div>#}
+{##}
+{#                      <!-- third slide -->#}
+{#                      <div class="carousel-item darkerskyblue">#}
+{#                        <div class="carousel-caption d-md-block">#}
+{#                          <h3 class="icon-container" data-animation="animated zoomInLeft">#}
+{#                            <span class="fa fa-glass"></span>#}
+{#                          </h3>#}
+{#                          <h3 data-animation="animated flipInX">#}
+{#                            This is the caption for slide 3#}
+{#                          </h3>#}
+{#                          <button class="btn btn-primary btn-lg" data-animation="animated lightSpeedIn">Button</button>#}
+{#                        </div>#}
+{#                      </div>#}
+{#                    </div>#}
+{##}
+{#                    <!-- controls -->#}
+{#                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">#}
+{#                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>#}
+{#                        <span class="sr-only">Previous</span>#}
+{#                    </a>#}
+{#                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">#}
+{#                        <span class="carousel-control-next-icon" aria-hidden="true"></span>#}
+{#                        <span class="sr-only">Next</span>#}
+{#                    </a>#}
+{#                  </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#</body>#}
+{#</html>#}

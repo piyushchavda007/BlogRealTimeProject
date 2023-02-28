@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'BlogApp/base.html' %}
+{% block title %} Share Post By Email {% endblock %}
+{% block content %}
+    {% if sent %}
+        <div class="hom_ee">
+            <a href="/"> <i class="fa fa-home" style="font-size:48px;color:#f1f1f1"></i> </a>
+            <h1>Email SuccessFully Sent..</h1>
+        </div>
+        <p> "{{ post.title }}" was sent by email </p>
+    {% else %}
+        <div class="hom_ee">
+            <a href="/"> <i class="fa fa-home" style="font-size:48px;color:#f1f1f1"></i> </a>
+            <h1>Share {{ post.title }} "By Email.." </h1>
+        </div>
+        <hr/>
+        <hr/>
+        <div class="mai_l_1">
+            <form method="post">
+                {{ form.as_p }}
+                {% csrf_token %}
+                <input type="Submit" name="" class="btn btn-lg btn-success my_bnt" value="Send Mail">
+            </form>
+        </div>
+    {% endif %}
+{% endblock %}
